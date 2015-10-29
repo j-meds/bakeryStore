@@ -7,16 +7,16 @@
     function Config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('Home', {
             url: '/',
-            templateUrl: 'views/home.html'
+            templateUrl: 'templates/home.html'
         }).state('About', {
             url: '/About',
-            templateUrl: 'views/about.html'
+            templateUrl: 'templates/about.html'
         }).state('Menu', {
             url: '/Menu',
-            templateUrl: 'views/menu.html'
+            templateUrl: 'templates/menu.html'
         }).state('Contact', {
             url: '/Contact_us',
-            templateUrl: 'views/contact.html',
+            templateUrl: 'templates/contact.html',
             controller: 'HomeController'
         });
         $urlRouterProvider.otherwise('/');
