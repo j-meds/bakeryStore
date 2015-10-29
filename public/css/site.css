@@ -1,9 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Noticia+Text);
 @import url(http://fonts.googleapis.com/css?family=Mr+De+Haviland);
 body {
-    background-image: url(http://static.wixstatic.com/media/41d000_81435491eaed42d8861e4225cb9e6ad7.jpg);
+    background: url(./images/bakerybg.jpg) no-repeat center center fixed;
     background-size: cover;
-    margin: 0 180px 0 180px;
+}
+
+.nopadding {
+    padding: 0;
 }
 
 #title {
@@ -12,65 +15,78 @@ body {
 }
 
 #imgcenter {
-    text-align: center;
-    padding-top: 32px;
-    position: relative;
-    left: 325px;
-    width: 395px;
-    height: 91px;
+    position: absolute;
+    z-index: -1;
+    height: 90px;
 }
 
 #heading {
-    margin: 0 0 0 0;
     position: relative;
-    bottom: 74px;
-    right: -402px;
-    display: inline;
-    font: normal normal bold 40px/1.4em 'noticia text', serif;
+    margin: 0;
+    z-index: 2;
+    font: normal normal bold 41px/1.4em 'noticia text', serif;
     color: #3A1C13;
     letter-spacing: 1.2px;
+    padding-top: 13px;
 }
 
 #menubar {
-    padding-left: 254px;
+    margin-top: 50px;
     background-color: #F4EFE1;
-    width: 736px;
     height: 30px;
-    margin-bottom: 10px;
+}
+
+@keyframes menuhover {
+    to {
+        background-color: #E87330;
+        color: white !important;
+    }
+}
+
+@keyframes orderhover {
+    to {
+        background-color: #3A1C13;
+        color: #9b6a5d;
+    }
 }
 
 .menusep {
-    position: relative;
     text-decoration: none;
-    left: 40px;
-    top: 6px;
     text-align: center;
-    display: inline;
-    padding-right: 80px;
     color: #3A1C13;
     font: normal normal bold 12px/1.4em 'noticia text', serif;
+    font-size: 14px;
+    padding: 5px 0 6px 0;
+    margin: 0;
 }
 
-#home {
+#orders {
+    background-color: #E87330;
+    color: white;
+}
+
+#orders:hover {
+    animation-name: orderhover;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+
+.links {
+    color: #3A1C13;
+    font: normal normal bold 12px/1.4em 'noticia text', serif;
+    font-size: 14px;
     text-decoration: none;
-    height: 30px;
-    background: #3A1C13;
-    display: inline-block;
 }
 
-#about {
-    height: 30px;
-    display: inline-block;
+.menusep:hover {
+    animation-name: menuhover;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
 }
 
-#menu {
-    height: 30px;
-    display: inline-block;
-}
-
-#contact {
-    height: 30px;
-    display: inline-block;
+.menusep:hover .links {
+    text-decoration: none;
+    color: #fff;
 }
 
 #phoneorder {
@@ -86,90 +102,54 @@ body {
     font-family: helvetica;
 }
 
-#content {
-    width: 100%;
-    height: 488px;
-}
-
 #box1 {
-    background-color: #F4EFE1;
     height: 488px;
-    width: 320px;
-    position: relative;
 }
 
-#imgbox1 {
-    margin-left: 11px;
-    margin-top: 9px;
+#box1img {
+    max-height: 488px;
+    border: solid 10px #F4EFE1;
+    width: 96%;
 }
 
 #box2 {
     height: 488px;
-    width: 320px;
-    position: relative;
-    bottom: 488px;
-    left: 335px;
 }
 
-#img1box2 {
-    position: relative;
-    background-color: #F4EFE1;
-    width: 100%;
-    height: 235px;
+#box2img1 {
+    border: solid 10px #F4EFE1;
+    max-height: 246px;
+    width: 96%;
 }
 
-#image1setting {
-    padding-left: 10px;
-    padding-top: 8px;
-    width: 301px;
-    height: 219px;
-}
-
-#img2box2 {
-    position: relative;
-    top: 18px;
-    background-color: #F4EFE1;
-    width: 100%;
-    height: 235px;
-}
-
-#image2setting {
-    padding-left: 10px;
-    padding-top: 8px;
-    width: 301px;
-    height: 219px;
-}
-
-#textbox2 {
-    position: relative;
-    left: 8px;
-    bottom: 11px;
-    text-align: center;
-    color: #F4EFE1;
-    width: 135px;
-    height: 56px;
-    padding-top: 10px;
-    border: solid thin;
-    font-family: 'noticia text', serif;
-    line-height: 23px;
+#box2img2 {
+    width: 96%;
+    max-height: 244px;
+    margin-top: 20px;
+    border: solid 10px #F4EFE1;
 }
 
 #textbgbox2 {
     position: absolute;
-    top: 198px;
-    left: 83px;
+    right: 25%;
+    top: 44%;
     background-color: #E87330;
     width: 155px;
     height: 88px;
+    padding: 10px;
+}
+
+#textbox2 {
+    text-align: center;
+    color: #F4EFE1;
+    margin: 0;
+    border: solid thin;
+    font-family: 'noticia text', serif;
 }
 
 #box3 {
     background-color: #F4EFE1;
     height: 488px;
-    width: 320px;
-    position: relative;
-    bottom: 1002px;
-    left: 669px;
 }
 
 #headingbox3 {
@@ -187,12 +167,27 @@ body {
     color: #3A1C13;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 #signaturebox3 {
     font-family: 'Mr De Haviland', cursive;
     color: #3A1C13;
-    padding-top: 38px;
-    padding-left: 30px;
+    padding: 15px 30px 20px;
     font-weight: 500;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.ficon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 #mediabox3 {
@@ -200,58 +195,38 @@ body {
 }
 
 #footer {
-    width: 990px;
-    height: 154px;
-    margin-top: 20px;
+    margin-top: 50px;
+    height: 140px;
     background-color: #F4EFE1;
-    color: #3A1C13;
+    margin-bottom: 50px;
+    padding: 20px;
 }
 
 #foot1 {
-    position: relative;
-    top: 30px;
-    left: 2px;
-    width: 208px;
     height: 100px;
     text-align: center;
     border-right: dotted 1px;
 }
 
 #foot2 {
-    width: 162px;
     height: 100px;
     text-align: center;
-    position: relative;
-    left: 219px;
-    bottom: 70px;
     border-right: 1px dotted;
 }
 
 #foot3 {
-    position: relative;
-    bottom: 170px;
-    left: 397px;
-    width: 183px;
     height: 100px;
     border-right: 1px dotted;
     text-align: center;
 }
 
 #foot4 {
-    position: relative;
-    left: 582px;
-    bottom: 270px;
-    width: 205px;
     height: 100px;
     border-right: 1px dotted;
     text-align: center;
 }
 
 #foot5 {
-    position: relative;
-    bottom: 374px;
-    left: 801px;
-    width: 183px;
     height: 100px;
     text-align: center;
 }
@@ -263,17 +238,151 @@ body {
 }
 
 .nomarginp {
-    margin: 0 0 0 0;
+    margin: 0;
     font-family: Helvetica;
     font-size: 13px;
     line-height: 17px;
     color: #653121;
 }
 
-a {
-    text-decoration: none;
+.col-md-12 {
+    padding-right: 0 !important;
 }
 
-.click:hover {
+.project {
+    display: block;
+    background: #E87330;
+    width: 280px;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.content h3 {
+    font-family: 'noticia text', cursive;
+    color: #fff;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.content p {
+    color: #3c763d;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+}
+
+.menuimg {
+    position: relative;
+    height: 220px;
+    width: 280px;
+    border: solid 7px #E87330
+}
+
+.menuimgprice {
+    color: #3c763d;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'noticia text', cursive;
+}
+
+.pricebg {
+    background-color: #F4EFE1;
+    padding: 8px;
+    display: inline;
+    border-top-right-radius: 20px;
+    border-top: solid 3px #94491E;
+    position: absolute;
+    border-right: solid 2px #94491E;
+    bottom: 51px;
+    left: 25px;
+}
+
+#menu {
+    font-family: 'noticia text', cursive;
+    color: #fff;
+    border: double 6px #ffe5d8;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+}
+
+#contact {
+    font-family: 'noticia text', cursive;
+    color: #fff;
+    border: solid 1px #ffe5d8;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+#reservation {
+    font-family: 'noticia text', cursive;
+    color: #fff;
+    border: solid 1px #ffe5d8;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.text {
+    font-family: 'noticia text', cursive;
+    color: #653121;
+}
+
+#contactForm {
+    border: 6px solid #3A1C13;
+    padding: 2em;
+    text-align: center;
+    background: #F4EFE1;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    margin: .8em auto;
+    font-family: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    display: block;
+    width: 280px;
+    padding: .4em;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+.formBtn {
+    transition: background-color 0.5s ease;
+    width: 140px;
+    display: inline-block;
     background-color: #E87330;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.2em;
+    border: none;
+    height: 30px;
+}
+
+.formBtn:hover {
+    background-color: #f79e6f;
+}
+
+.angular-google-map-container {
+    height: 382px;
 }
