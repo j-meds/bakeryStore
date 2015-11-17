@@ -16,8 +16,9 @@ body {
 
 #imgcenter {
     position: absolute;
-    z-index: -1;
+    z-index: -5;
     height: 90px;
+    width: 100%;
 }
 
 #heading {
@@ -30,10 +31,89 @@ body {
     padding-top: 13px;
 }
 
+@media (max-width:400px) {
+    #heading {
+        font-size: 28px;
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+    .hide {
+        display: none;
+    }
+}
+
 #menubar {
     margin-top: 50px;
     background-color: #F4EFE1;
     height: 30px;
+}
+
+#mobileMenu {
+    background-color: #F4EFE1;
+    height: 48px;
+    display: none;
+    border-bottom: 2px #54392F solid;
+}
+
+@keyframes nav {
+    from {
+        top: -56px;
+    }
+    to {
+        top: 48px;
+    }
+}
+
+#navlist {
+    position: absolute;
+    cursor: pointer;
+    background-color: #E87330;
+    list-style-type: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.norm {
+    animation: nav 2s;
+    animation-fill-mode: forwards;
+}
+
+.rev {
+    animation: nav 2s !important;
+    animation-direction: reverse !important;
+}
+
+#menuOrder {
+    padding: 6px 0 7px 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+@media (max-width:995px) {
+    #menuOrder {
+        font-size: 8px;
+        padding: 9px 0 10px 0;
+    }
+}
+
+@media (max-width:800px) {
+    #menubar {
+        display: none;
+    }
+    #mobileMenu {
+        display: block;
+    }
+    #hamburger {
+        font-size: 46px;
+        float: right;
+        color: #fff;
+        background-color: #3A1C13;
+        position: inherit;
+        bottom: 1px;
+    }
+    #heading {
+        padding-bottom: 15px;
+    }
 }
 
 @keyframes menuhover {
@@ -118,12 +198,12 @@ body {
 
 #box2img1 {
     border: solid 10px #F4EFE1;
-    max-height: 246px;
-    width: 96%;
+    max-height: 252px;
+    width: 97%;
 }
 
 #box2img2 {
-    width: 96%;
+    width: 97%;
     max-height: 244px;
     margin-top: 20px;
     border: solid 10px #F4EFE1;
@@ -135,7 +215,6 @@ body {
     top: 44%;
     background-color: #E87330;
     width: 155px;
-    height: 88px;
     padding: 10px;
 }
 
@@ -167,6 +246,40 @@ body {
     color: #3A1C13;
 }
 
+@media only screen and (max-width: 650px) {
+    #textbgbox2 {
+        display: none;
+    }
+    #box1 {
+        height: 100%;
+    }
+    #box1img {
+        max-height: 100%;
+        border: solid 10px #F4EFE1;
+        width: 96%;
+    }
+    #box2 {
+        height: 100%;
+    }
+    #box3 {
+        margin-top: 15px;
+        height: 100%;
+        padding-bottom: 15px;
+    }
+    #headingbox3 {
+        font-size: 24px;
+        color: #3A1C13;
+        letter-spacing: 1.2px;
+        padding-top: 0;
+    }
+    #textbox3 {
+        font-family: Helvetica;
+        padding: 0 30px 0 30px;
+        line-height: 20px;
+        color: #3A1C13;
+    }
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -196,7 +309,8 @@ body {
 
 #footer {
     margin-top: 50px;
-    height: 140px;
+    height: 100%;
+    width: 100%;
     background-color: #F4EFE1;
     margin-bottom: 50px;
     padding: 20px;

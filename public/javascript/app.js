@@ -22,3 +22,6 @@
         $urlRouterProvider.otherwise('/');
     }
 })();
+
+// native javascript
+

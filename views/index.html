@@ -10,93 +10,102 @@
 </head>
 
 <body>
+    <div class="container-fluid nopadding" ng-controller='NavController'>
+        <div id="mobileMenu">
+            <span ng-click='!shownav ? shownav = true : shownav = false' id='hamburger' class="pointer glyphicon glyphicon-menu-hamburger"></span>
+        </div>
+        <ul ng-show='shownav' class="col-xs-12" id="navlist">
+            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Home'>Home</a></li>
+            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='About'>About</a></li>
+            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Menu'>Menu</a></li>
+            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Contact'>Contact</a></li>
+        </ul>
+    </div>
     <div class="container" style="padding-right: 8%; padding-left:8%; padding-top:35px;">
         <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-6 col-md-offset-3">
-                    <img id='imgcenter' class="center-block" src="http://static.wixstatic.com/media/3f1dbf_f4b4a2d822774407a92e4934435bd382.png_srb_p_444_91_75_22_0.50_1.20_0.00_png_srb">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 nopadding">
+                    <img id='imgcenter' class="center-block;img-responsive" src="http://static.wixstatic.com/media/3f1dbf_f4b4a2d822774407a92e4934435bd382.png_srb_p_444_91_75_22_0.50_1.20_0.00_png_srb">
                     <h1 class="text-center" id="heading">Jose's Bakery</h1>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-3 col-sm-2 col-xs-1"></div>
             </div>
-            <div id="menubar" class="col-md-12">
-                <div class="col-md-1">
+            <div id="menubar" class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-1 col-sm-1 col-xs-1">
                 </div>
-                <div class="col-md-2 nopadding">
+                <div class="col-md-2 col-sm-2 col-xs-2  nopadding">
                     <p ui-sref='Home' class="menusep pointer">
                         <a class="links">Home</a>
                     </p>
                 </div>
-                <div class="col-md-2 nopadding">
+                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
                     <p ui-sref='About' class="menusep pointer">
                         <a class="links">About</a>
                     </p>
                 </div>
-                <div class="col-md-2 nopadding">
+                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
                     <p ui-sref='Menu' class="menusep pointer">
                         <a class="links">Menu</a>
                     </p>
                 </div>
-                <div class="col-md-2 nopadding">
+                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
                     <p ui-sref='Contact' class="menusep pointer">
                         <a class="links">Contact</a>
                     </p>
                 </div>
-                <div class="col-md-3" id='orders'>
-                    <p class="pointer" style="padding: 5px 0 5px 0;margin: 0;">Orders Call: +1 (800) 123-4567</p>
+                <div class="col-md-3 col-sm-3 col-xs-2" id='orders'>
+                    <p class="pointer" id="menuOrder">Orders Call: +1 (800) 123-4567</p>
                 </div>
             </div>
         </div>
     </div>
     <ui-view></ui-view>
     <div class="container" style="padding-right: 6%; padding-left:6%;">
-        <div class="col-md-12 nopadding">
-            <div id="footer">
-                <div class="col-md-3" id="foot1">
-                    <h4 class="nomarginh">ORDERS</h4>
-                    <p class="nomarginp">
-                        <b>Phone:</b>
-                        <br /> 1.800.123.4567
-                        <br /> <b>Email:</b>
-                        <br />Josemedina760@gmail.com
-                    </p>
-                </div>
-                <div class="col-md-2" id="foot2">
-                    <h4 class="nomarginh">FOLLOW US</h4>
-                    <img class='ficon' src="./css/images/facebook.png" />
-                    <img class='ficon' src="./css/images/twitter.png" />
-                    <img class='ficon' src="./css/images/dopplr.png" />
-                    <img class='ficon' src="./css/images/rss.png" />
-                </div>
-                <div class="col-md-2" id="foot3">
-                    <h4 class="nomarginh">ADDRESS</h4>
-                    <p class="nomarginp">
-                        401 Grand Ave.
-                        <br /> Oakland, CA
-                        <br />94610
-                    </p>
-                </div>
-                <div class="col-md-3" id="foot4">
-                    <h4 class="nomarginh">HOURS</h4>
-                    <p class="nomarginp">
-                        Mon – Thur 6AM - 7PM
-                        <br /> Friday 6AM - 9PM
-                        <br /> Saturday 7AM - 9PM
-                        <br /> Sunday 7AM - 7PM
-                        <br />
-                    </p>
-                </div>
-                <div class="col-md-2" id="foot5">
-                    <p class="nomarginp" style="padding-top:20px">
-                        © 2015 by Jose's Bakery.
-                        <br /> Proudly created By
-                        <br /> Jose Medina
-                        <br />
-                        <a href="http://www.Josemedina.io" target="_blank" style="color:#3A1C13;text-decoration:underline">
+        <div id="footer" class="col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="col-md-3 col-sm-4 col-xs-6" id="foot1">
+                <h4 class="nomarginh">ORDERS</h4>
+                <p class="nomarginp">
+                    <b>Phone:</b>
+                    <br /> 1.800.123.4567
+                    <br /> <b>Email:</b>
+                    <br />Josemedina760@gmail.com
+                </p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6" id="foot2">
+                <h4 class="nomarginh">FOLLOW US</h4>
+                <img class='ficon' src="./css/images/facebook.png" />
+                <img class='ficon' src="./css/images/twitter.png" />
+                <img class='ficon' src="./css/images/dopplr.png" />
+                <img class='ficon' src="./css/images/rss.png" />
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-6" id="foot3">
+                <h4 class="nomarginh">ADDRESS</h4>
+                <p class="nomarginp">
+                    401 Grand Ave.
+                    <br /> Oakland, CA
+                    <br />94610
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6" id="foot4">
+                <h4 class="nomarginh">HOURS</h4>
+                <p class="nomarginp">
+                    Mon – Thur 6AM - 7PM
+                    <br /> Friday 6AM - 9PM
+                    <br /> Saturday 7AM - 9PM
+                    <br /> Sunday 7AM - 7PM
+                    <br />
+                </p>
+            </div>
+            <div class="col-md-2 col-xs-3 col-xs-3 hide" id="foot5">
+                <p class="nomarginp" style="padding-top:20px">
+                    © 2015 by Jose's Bakery.
+                    <br /> Proudly created By
+                    <br /> Jose Medina
+                    <br />
+                    <a href="http://www.Josemedina.io" target="_blank" style="color:#3A1C13;text-decoration:underline">
                     www.Josemedina.io
                 </a>
-                    </p>
-                </div>
+                </p>
             </div>
         </div>
     </div>
@@ -106,14 +115,14 @@
     <!-- Global Src -->
     <script src="/javascript/app.js"></script>
     <!-- Google Maps -->
-    <script src='/lodash/lodash.min.js'></script>
     <script src='/angular-simple-logger/dist/index.js'></script>
+    <script src="/lodash/lodash.js"></script>
     <script src='/angular-google-maps/dist/angular-google-maps.min.js'></script>
-    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     <!-- Factories -->
     <script src="/javascript/services/HomeFactory.js"></script>
     <!-- Controllers -->
     <script src="/javascript/controllers/HomeController.js"></script>
+    <script src="/javascript/controllers/NavController.js"></script>
 </body>
 
 </html>
