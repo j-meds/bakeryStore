@@ -3,66 +3,73 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <title>Demo Bakery</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 
 <body>
-    <div class="container-fluid nopadding" ng-controller='NavController'>
+    <div class="container-fluid nav nopadding" ng-controller='NavController'>
         <div id="mobileMenu">
-            <span ng-click='!shownav ? shownav = true : shownav = false' id='hamburger' class="pointer glyphicon glyphicon-menu-hamburger"></span>
+            <span ng-click='shownav = !shownav' id='hamburger' class="pointer glyphicon glyphicon-menu-hamburger"></span>
         </div>
-        <ul ng-show='shownav' class="col-xs-12" id="navlist">
-            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Home'>Home</a></li>
-            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='About'>About</a></li>
-            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Menu'>Menu</a></li>
-            <li class="col-xs-3 pointer"><a style="color:#fff" ui-sref='Contact'>Contact</a></li>
+        <ul ng-if='shownav' ng-class="{'norm': shownav}" class="col-xs-12" id="navlist">
+            <a style="color:#fff" ui-sref='Home'>
+                <li class="col-xs-3 pointer navitem">Home</li>
+            </a>
+            <a style="color:#fff" ui-sref='About'>
+                <li class="col-xs-3 pointer navitem">About</li>
+            </a>
+            <a style="color:#fff" ui-sref='Menu'>
+                <li class="col-xs-3 pointer navitem">Menu</li>
+            </a>
+            <a style="color:#fff" ui-sref='Contact'>
+                <li class="col-xs-3 pointer navitem">Contact</li>
+            </a>
         </ul>
     </div>
-    <div class="container" style="padding-right: 8%; padding-left:8%; padding-top:35px;">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 nopadding">
-                    <img id='imgcenter' class="center-block;img-responsive" src="http://static.wixstatic.com/media/3f1dbf_f4b4a2d822774407a92e4934435bd382.png_srb_p_444_91_75_22_0.50_1.20_0.00_png_srb">
-                    <h1 class="text-center" id="heading">Jose's Bakery</h1>
-                </div>
-                <div class="col-md-3 col-sm-2 col-xs-1"></div>
+    <div class="container">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top:40px">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 nopadding">
+                <img id='imgcenter' class="center-block;img-responsive" src="../css/images/logo.png">
+                <h1 class="text-center" id="heading">Demo Bakery</h1>
             </div>
-            <div id="menubar" class="col-md-12 col-sm-12 col-xs-12">
-                <div class="col-md-1 col-sm-1 col-xs-1">
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2  nopadding">
-                    <p ui-sref='Home' class="menusep pointer">
-                        <a class="links">Home</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
-                    <p ui-sref='About' class="menusep pointer">
-                        <a class="links">About</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
-                    <p ui-sref='Menu' class="menusep pointer">
-                        <a class="links">Menu</a>
-                    </p>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
-                    <p ui-sref='Contact' class="menusep pointer">
-                        <a class="links">Contact</a>
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-2" id='orders'>
-                    <p class="pointer" id="menuOrder">Orders Call: +1 (800) 123-4567</p>
-                </div>
+            <div class="col-md-3 col-sm-2 col-xs-1"></div>
+        </div>
+        <div id="menubar" class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2  nopadding">
+                <p ui-sref='Home' class="menusep pointer">
+                    <a class="links">Home</a>
+                </p>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
+                <p ui-sref='About' class="menusep pointer">
+                    <a class="links">About</a>
+                </p>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
+                <p ui-sref='Menu' class="menusep pointer">
+                    <a class="links">Menu</a>
+                </p>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
+                <p ui-sref='Contact' class="menusep pointer">
+                    <a class="links">Contact</a>
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-2" id='orders'>
+                <p class="pointer" id="menuOrder">Orders Call: (123) 123-4567</p>
             </div>
         </div>
     </div>
+    <br>
     <ui-view></ui-view>
-    <div class="container" style="padding-right: 6%; padding-left:6%;">
-        <div id="footer" class="col-md-12 col-sm-12 col-xs-12 nopadding">
-            <div class="col-md-3 col-sm-4 col-xs-6" id="foot1">
+    <br>
+    <div class="container">
+        <div class="col-md-12 col-xs-12 col-sm-12" id='footer'>
+            <div class="col-md-3 col-sm-6 col-xs-12" id="foot1">
                 <h4 class="nomarginh">ORDERS</h4>
                 <p class="nomarginp">
                     <b>Phone:</b>
@@ -71,7 +78,7 @@
                     <br />Josemedina760@gmail.com
                 </p>
             </div>
-            <div class="col-md-2 col-sm-4 col-xs-6" id="foot2">
+            <div class="col-md-2 col-sm-6 col-xs-6" id="foot2">
                 <h4 class="nomarginh">FOLLOW US</h4>
                 <img class='ficon' src="./css/images/facebook.png" />
                 <img class='ficon' src="./css/images/twitter.png" />
@@ -86,7 +93,7 @@
                     <br />94610
                 </p>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6" id="foot4">
+            <div class="col-md-3 col-sm-6 col-xs-6 nopadding" id="foot4">
                 <h4 class="nomarginh">HOURS</h4>
                 <p class="nomarginp">
                     Mon – Thur 6AM - 7PM
@@ -96,16 +103,18 @@
                     <br />
                 </p>
             </div>
-            <div class="col-md-2 col-xs-3 col-xs-3 hide" id="foot5">
-                <p class="nomarginp" style="padding-top:20px">
-                    © 2015 by Jose's Bakery.
-                    <br /> Proudly created By
-                    <br /> Jose Medina
-                    <br />
-                    <a href="http://www.Josemedina.io" target="_blank" style="color:#3A1C13;text-decoration:underline">
-                    www.Josemedina.io
-                </a>
-                </p>
+            <div class="col-md-2 col-sm-12 col-xs-6" id="foot5">
+                <h4 class="nomarginh">Designer</h4>    
+                <p class="nomarginp">
+                        © 2017 by Jose's Bakery.
+                        <br /> Proudly created By
+                        <br /> Jose Medina
+                        <br />
+                        <a href="http://www.jmeds.us" target="_blank" style="color:#3A1C13;text-decoration:underline">
+                        www.Jmeds.us
+                    </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
